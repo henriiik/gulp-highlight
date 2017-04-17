@@ -20,7 +20,7 @@ module.exports = function (options) {
     $(options.selector).each(function (index, code) {
       var elem = $(code);
       if (!elem.hasClass(options.ignoreClass)) {
-        elem.html(hljs.highlightAuto(elem.html()).value);
+        elem.html(hljs.highlightAuto(elem.html(), options.languageSubset).value);
         elem.addClass('hljs');
       }
     });
